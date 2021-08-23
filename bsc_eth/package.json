@@ -1,6 +1,6 @@
 {
   "name": "mrx-swap-eth",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Vendor Registry & Wrapped Asset contracts for Etherium and BSC, and associated stuff.",
   "main": "none",
   "directories": {
