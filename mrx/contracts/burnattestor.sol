@@ -18,7 +18,7 @@ contract BurnAttestor is Ownable, Managable {
     mapping(uint256 => mapping(address => bool)) public ethAttested; //burn txid => mapping (address => attested)
     mapping(address => uint256) public pendingWithdraws;
 
-    /// Emitted whenever a burn is attested by a manager
+    /// Emitted whenever a burn attestation has reached attestationsRequired
     /// @param chain  The chain which the burn occurred, this can only be "bsc" or "eth"
     /// @param burn   The transaction hash of the burn 
     /// @param burner The hexified vendor address
