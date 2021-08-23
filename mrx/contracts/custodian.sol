@@ -35,7 +35,7 @@ contract Custodian is BurnAttestor {
         balance = balance - amount;
     }
 
-    /// A management only method to add to a vendor's available MRX balance
+    /// A method to withdraw any available unwrapped vendor funds
     function withdraw() public virtual override returns (uint256) {
         require(pendingWithdraws[msg.sender] > 0, "No available balance");
         uint256 amount = super.withdraw();
