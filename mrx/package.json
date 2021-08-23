@@ -1,0 +1,28 @@
+{
+  "name": "custodian",
+  "version": "1.0.0",
+  "description": "A custodial contract to hold MRX reserves that has been wrapped on BSC and ETH blockchains",
+  "scripts": {
+    "buildTs": "tsc --listEmittedFiles",
+    "buildSol": "node compile/index.js",
+    "build": "npm run buildSol && npm run buildTs",
+    "deploy": "node dist/index.js"
+  },
+  "author": "SeqSEE",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/locks": "^0.2.1",
+    "@types/node": "^16.7.1",
+    "serve": "^12.0.0",
+    "solc": "^0.8.7-fixed",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "ethers": "^5.4.5",
+    "express": "^4.17.1",
+    "http": "^0.0.1-security",
+    "locks": "^0.2.2"
+  }
+}
