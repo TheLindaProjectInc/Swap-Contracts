@@ -34,6 +34,11 @@ if (process.env.RPC_URL == undefined) {
     console.log(`GAS_LIMIT is undefined`);
     process.exit(1);
   };
+} else if (process.env.ATTESTATIONS == undefined) {
+  start = async () => {
+    console.log(`ATTESTATIONS is undefined`);
+    process.exit(1);
+  };
 } else {
   start = async () => {
     const deployer = new MetrixContractDeployer();

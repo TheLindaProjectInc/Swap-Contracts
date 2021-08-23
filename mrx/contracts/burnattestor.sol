@@ -32,6 +32,7 @@ contract BurnAttestor is Ownable, Managable {
 
     /// Deploy a BurnAttestor contract
     constructor(uint256 _attestationsRequired) {
+        require(_attestationsRequired > 0, "At least 1 attestation required");
         attestationsRequired = _attestationsRequired;
     }
 
@@ -77,7 +78,7 @@ contract BurnAttestor is Ownable, Managable {
         public
         isOwner
     {
-        require(_attestationsRequired > 0, "Amount must be greater than 0");
+        require(_attestationsRequired > 0, "At least 1 attestation required");
         attestationsRequired = _attestationsRequired;
     }
 

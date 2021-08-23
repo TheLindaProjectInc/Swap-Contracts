@@ -1,5 +1,5 @@
 import { MetrixRPCNode } from "../lib/MetrixRPC/MetrixRPC";
-import { utils } from "ethers";
+import { BigNumber, utils } from "ethers";
 
 import fs from "fs";
 import path from "path";
@@ -56,12 +56,14 @@ class MetrixContractDeployer {
   }
 
   public async deploy(): Promise<void> {
+    const iface = new utils.Interface(this.abi);
     const deployment = await this.mrpc.promiseCreateContract(
-      this.bytecode,
+      `${this.bytecode}${iface.encodeDeploy([BigNumber.from(process.env.ATTESTATIONS as string)]).replace("0x", "")}`,
       Number(process.env.GAS_LIMIT),
       parseFromIntString(process.env.GAS_PRICE as string, 8),
       process.env.DEPLOYMENT_ACCT as string
     );
+    
     if (deployment) {
       try {
         const { txid, sender, hash160, address } = deployment;
@@ -93,7 +95,7 @@ class MetrixContractDeployer {
           return;
         }
         const contracts = [];
-        const iface = new utils.Interface(this.abi);
+        
 
         const eventMap = new Map();
         for (const receipt of transactionReceipt) {
