@@ -5,7 +5,7 @@ pragma solidity >=0.8.4;
 import "./ownable.sol";
 import "./managable.sol";
 
-/// Management contract for a BurnAttestor which can hold extra funds
+/// Burn attestor lets managers attest vendor burns
 /// @title  BurnAttestor
 /// @dev    this contract acts as both a trusted oracle which managers can attest cross chain burns of MRXb/MRXe and also as a ledger for vendor withdraws from unwraps.
 /// @author SeqSEE
@@ -80,7 +80,7 @@ contract BurnAttestor is Ownable, Managable {
         require(_attestationsRequired > 0, "Amount must be greater than 0");
         attestationsRequired = _attestationsRequired;
     }
-    
+
     /// A method to retrieve the caller's available balance in satoshi
     function vendorBalance() public view returns (uint256) {
         return pendingWithdraws[msg.sender];
