@@ -12,6 +12,8 @@ import "./imigratablevendorregistry.sol";
 
 
 /// An ERC1363 (also ERC20) for wrapping MRX on the ethereum or BSC chain.
+/// @title  WrappedAsset
+/// @author loma oopaloopa
 contract WrappedAsset is ERC1363, Pausable, Managable, IMigratableWrappedAsset
     {
     address                  public  prevVendorRegistry      = address(0);
@@ -96,7 +98,7 @@ contract WrappedAsset is ERC1363, Pausable, Managable, IMigratableWrappedAsset
         }
 
     /// @inheritdoc ERC20
-    function decimals() public view virtual override returns (uint8)
+    function decimals() public pure virtual override returns (uint8)
         {
         return 8;
         }
