@@ -17,11 +17,11 @@ const ETH_GAS       = parseInt(checkAndFetchEnv("DEPLOY_ETH_GAS"));
 const ETH_METADATA  = { deploymentUrl: ETH_URL };
 const SAVE_DIR      = (process.env.DEPLOY_DEPLOYMENT_NAME ? checkAndFetchEnv("DEPLOY_DEPLOYMENT_NAME") : "noname") + "/eth";
 
-let usePneumonic = true;
+let useMnemonic = true;
 if (process.env.DEPLOY_ETH_PRIVATE_KEY)
-    usePneumonic = false;
-else if (!process.env.DEPLOY_ETH_PNEUMONIC)
-    throw new Error(`DEPLOYMENT FAILED: Neither environmental variable DEPLOY_ETH_PRIVATE_KEY nor DEPLOY_ETH_PNEUMONIC is set.`);
+    useMnemonic = false;
+else if (!process.env.DEPLOY_ETH_MNEMONIC)
+    throw new Error(`DEPLOYMENT FAILED: Neither environmental variable DEPLOY_ETH_PRIVATE_KEY nor DEPLOY_ETH_MNEMONIC is set.`);
 
 deploy().then(() =>
     {
@@ -33,7 +33,7 @@ async function deploy() : Promise<void>
     {
     try
         {
-        const wallet = usePneumonic ? new HDWalletProvider(process.env.DEPLOY_ETH_PNEUMONIC as string, ETH_URL) : new HDWalletProvider({ providerOrUrl: ETH_URL, privateKeys: [ process.env.DEPLOY_ETH_PRIVATE_KEY! ] });
+        const wallet = useMnemonic ? new HDWalletProvider(process.env.DEPLOY_ETH_MNEMONIC as string, ETH_URL) : new HDWalletProvider({ providerOrUrl: ETH_URL, privateKeys: [ process.env.DEPLOY_ETH_PRIVATE_KEY! ] });
         const w3 = new Web3(wallet);
         const vr = await SolidityUtils.deployFromSource("vendorregistry.sol", w3, 0, [ ETH_NAME, ETH_SYMBOL, ETH_CAP, ETH_SS_PERIOD ], ETH_GAS, SAVE_DIR, ETH_METADATA);
         const waAddr = await vr.methods.getWrappedAsset().call();

@@ -3,8 +3,8 @@ Environmental Variable       Usage
 ======================       =====
 DEPLOY_DEPLOYMENT_NAME       Optional (defaults to "noname"), used as the name of the directory where the deployment information, etc is saved.
 
-DEPLOY_ETH_PRIVATE_KEY       The private key for the deployment account (set either DEPLOY_ETH_PNEUMONIC or DEPLOY_ETH_PRIVATE_KEY).
-DEPLOY_ETH_PNEUMONIC         The pneumonic for the deployment account (set either DEPLOY_ETH_PNEUMONIC or DEPLOY_ETH_PRIVATE_KEY).
+DEPLOY_ETH_PRIVATE_KEY       The private key for the deployment account (set either DEPLOY_ETH_MNEMONIC or DEPLOY_ETH_PRIVATE_KEY).
+DEPLOY_ETH_MNEMONIC          The mnemonic for the deployment account (set either DEPLOY_ETH_MNEMONIC or DEPLOY_ETH_PRIVATE_KEY).
 DEPLOY_ETH_URL               The URL of the blockchain node to be used for deployment.
 DEPLOY_ETH_GAS               The gas limit for the deployment.
 DEPLOY_ETH_TOKEN_NAME        The name of the fungible token.
