@@ -12,7 +12,7 @@ const DEPLOYED_DIR  = "solidity_utils_deployments";
 const OPTIMIZER_SETTINGS =
     {
     enabled: true,
-    runs:    1000000,
+    runs:    2,
     details:
         {
         peephole:          true,
