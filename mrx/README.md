@@ -2,6 +2,8 @@
 
 This repository is a suite of contracts as well as the scripts needed to deploy them.
 
+_**Note:** This feature is not slated for use until there is Web3 support for Metrix_
+
 ### Prerequisites
 
 - [NodeJS 14+](https://nodejs.org/en/download/)
