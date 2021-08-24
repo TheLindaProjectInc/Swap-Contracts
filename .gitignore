@@ -1,6 +1,4 @@
 **/node_modules
 **/.env
-**/build
-**/data
 **/dist
-**/.next
+**/solidity_utils_deployments
