@@ -65,7 +65,7 @@ describe("Migration Test", () : void =>
 
     it("registers PREV/0", async () : Promise<void> =>
         {
-        const txResult = await prevVR.methods.manageVendorRegistration(MRX_ADDRESS, accounts[0]).send({ from: accounts[0], gas: 500000 });
+        const txResult = await prevVR.methods.setVendorRegistration(MRX_ADDRESS, accounts[0]).send({ from: accounts[0], gas: 500000 });
         assert.ok(txResult.events.Registered.returnValues.mrxAddress == MRX_ADDRESS);
         assert.ok(txResult.events.Registered.returnValues.vendorAddress == accounts[0]);
         const registeredMrxAddress = await prevVR.methods.findMrxFromVendor(accounts[0]).call();
@@ -303,7 +303,7 @@ describe("Migration Test", () : void =>
 
     it("registers PREV/0", async () : Promise<void> =>
         {
-        const txResult = await prevVR.methods.manageVendorRegistration(MRX_ADDRESS, accounts[0]).send({ from: accounts[0], gas: 500000 });
+        const txResult = await prevVR.methods.setVendorRegistration(MRX_ADDRESS, accounts[0]).send({ from: accounts[0], gas: 500000 });
         assert.ok(txResult.events.Registered.returnValues.mrxAddress == MRX_ADDRESS);
         assert.ok(txResult.events.Registered.returnValues.vendorAddress == accounts[0]);
         const registeredMrxAddress = await prevVR.methods.findMrxFromVendor(accounts[0]).call();
@@ -312,7 +312,7 @@ describe("Migration Test", () : void =>
 
     it("registers NEXT/0", async () : Promise<void> =>
         {
-        const txResult = await nextVR.methods.manageVendorRegistration(MRX_ADDRESS_2, accounts[0]).send({ from: accounts[0], gas: 500000 });
+        const txResult = await nextVR.methods.setVendorRegistration(MRX_ADDRESS_2, accounts[0]).send({ from: accounts[0], gas: 500000 });
         assert.ok(txResult.events.Registered.returnValues.mrxAddress == MRX_ADDRESS_2);
         assert.ok(txResult.events.Registered.returnValues.vendorAddress == accounts[0]);
         const registeredMrxAddress = await nextVR.methods.findMrxFromVendor(accounts[0]).call();
