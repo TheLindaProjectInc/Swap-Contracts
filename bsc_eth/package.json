@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc --listEmittedFiles",
     "deploy": "node ./dist/deploy.js",
-    "test": "./node_modules/mocha/bin/mocha --timeout 10000 ./dist/test/migration.js ; ./node_modules/mocha/bin/mocha --timeout 10000 ./dist/test/general.js"
+    "test": "./node_modules/mocha/bin/mocha --timeout 10000 ./dist/test"
   },
   "author": "loma oopaloopa",
   "license": "MIT",
