@@ -1,4 +1,4 @@
-[![MythXBadge](https://badgen.net/https/api.mythx.io/v1/projects/3d84f8bd-e15a-46b3-8e33-e9286b595dde/badge/data?cache=300&icon=https://raw.githubusercontent.com/ConsenSys/mythx-github-badge/main/logo_white.svg)](https://docs.mythx.io/dashboard/github-badges) [![BSC/ETH CI](https://github.com/TheLindaProjectInc/Swap-Contracts/actions/workflows/bsc_eth.yml/badge.svg)](https://github.com/TheLindaProjectInc/Swap-Contracts/actions/workflows/bsc_eth.yml) [![MRX CI](https://github.com/TheLindaProjectInc/Swap-Contracts/actions/workflows/mrx.yml/badge.svg)](https://github.com/TheLindaProjectInc/Swap-Contracts/actions/workflows/mrx.yml)
+[![MythXBadge](https://badgen.net/https/api.mythx.io/v1/projects/3d84f8bd-e15a-46b3-8e33-e9286b595dde/badge/data?cache=300&icon=https://raw.githubusercontent.com/ConsenSys/mythx-github-badge/main/logo_white.svg)](https://docs.mythx.io/dashboard/github-badges) [![Contracts CI](https://github.com/TheLindaProjectInc/Swap-Contracts/actions/workflows/contracts.yml/badge.svg)](https://github.com/TheLindaProjectInc/Swap-Contracts/actions/workflows/contracts.yml)
 
 # Swap Contracts
 
