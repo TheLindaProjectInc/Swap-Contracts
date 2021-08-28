@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.0;
+pragma solidity 0.8.6;
 
 /// A collection of all methods on a previous VendorRegistry called by the new version of WrappedAsset during migration.
 /// The migration process does not use any VendorRegistry methods on the previous version that are not in this interface.
